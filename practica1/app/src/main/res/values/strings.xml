@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">practica1</string>
+    <string name="main_button_text_hello">saludar</string>
+    <string name="hello">Hola Servicios moviles</string>
 </resources>
