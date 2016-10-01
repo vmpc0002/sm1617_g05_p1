@@ -10,7 +10,7 @@ public class Authentication {
     protected String mIP;
     protected int mPort;
 
-    public Authentication(String User, String IP, String Pass, int Port){
+    public Authentication(String User, String Pass, String IP, int Port){
         mUser=User;
         mIP=IP;
         mPass=Pass;
