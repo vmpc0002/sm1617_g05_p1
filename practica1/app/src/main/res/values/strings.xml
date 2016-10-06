@@ -8,4 +8,5 @@
     <string name="autenticacion_ip_hint">127.0.0.1</string>
     <string name="autenticacion_port">Puerto</string>
     <string name="autenticacion_port_hint">80</string>
+    <string name="autenticacion_boton">Enviar</string>
 </resources>

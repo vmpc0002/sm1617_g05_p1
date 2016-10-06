@@ -4,91 +4,109 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/activity_vertical_margin"
+        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true">
+        android:orientation="vertical">
 
-        <TableRow>
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/activity_vertical_margin">
 
-            <TextView
-                android:id="@+id/autenticacion_user_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="5"
-                android:text="@string/autenticacion_user"
-                android:textSize="15sp" />
+            <TableRow>
 
-            <EditText
-                android:id="@+id/autenticacion_user_edittext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="12"
-                android:inputType="textPersonName"
-                tools:hint="@string/autenticacion_user_hint" />
+                <TextView
+                    android:id="@+id/autenticacion_user_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="5"
+                    android:text="@string/autenticacion_user"
+                    android:textSize="15sp" />
 
-        </TableRow>
+                <EditText
+                    android:id="@+id/autenticacion_user_edittext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="12"
+                    android:hint="@string/autenticacion_user_hint"
+                    android:inputType="textPersonName" />
 
-        <TableRow>
+            </TableRow>
 
-            <TextView
-                android:id="@+id/autenticacion_pass_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="5"
-                android:text="@string/autenticacion_pass"
-                android:textSize="15sp" />
+            <TableRow>
 
-            <EditText
-                android:id="@+id/autenticacion_pass_edittext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="12"
-                android:inputType="textPassword"
-                tools:hint="@string/autenticacion_pass_hint" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/autenticacion_pass_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="5"
+                    android:text="@string/autenticacion_pass"
+                    android:textSize="15sp" />
 
-        <TableRow>
+                <EditText
+                    android:id="@+id/autenticacion_pass_edittext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="12"
+                    android:hint="@string/autenticacion_pass_hint"
+                    android:inputType="textPassword" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/autenticacion_ip_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="5"
-                android:text="@string/autenticacion_ip"
-                android:textSize="15sp" />
+            <TableRow>
 
-            <EditText
-                android:id="@+id/autenticacion_ip_edittext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="12"
-                android:inputType="text"
-                tools:hint="@string/autenticacion_ip_hint" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/autenticacion_ip_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="5"
+                    android:text="@string/autenticacion_ip"
+                    android:textSize="15sp" />
 
-        <TableRow>
+                <EditText
+                    android:id="@+id/autenticacion_ip_edittext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="12"
+                    android:hint="@string/autenticacion_ip_hint"
+                    android:inputType="text" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/autenticacion_port_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="5"
-                android:text="@string/autenticacion_port"
-                android:textSize="15sp"/>
+            <TableRow>
 
-            <EditText
-                android:id="@+id/autenticacion_port_edittext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="6"
-                android:inputType="number"
-                tools:hint="@string/autenticacion_port_hint" />
+                <TextView
+                    android:id="@+id/autenticacion_port_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="5"
+                    android:text="@string/autenticacion_port"
+                    android:textSize="15sp" />
 
-        </TableRow>
+                <EditText
+                    android:id="@+id/autenticacion_port_edittext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="6"
+                    android:hint="@string/autenticacion_port_hint"
+                    android:inputType="number" />
 
-    </TableLayout>
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/autenticacion_envia_boton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="@string/autenticacion_boton"
+            android:onClick="pulsar"
+            />
+
+    </LinearLayout>
+
 
 </RelativeLayout>
