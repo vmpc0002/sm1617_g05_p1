@@ -9,7 +9,8 @@ public class ServicioRemotoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String muser, mpass, mport, mip;
+        String muser, mpass, mip;
+        int mport;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.servicio_remoto);
         user = (TextView) findViewById(R.id.servicio_remoto_user_textview);
@@ -18,7 +19,7 @@ public class ServicioRemotoActivity extends AppCompatActivity {
         ip = (TextView) findViewById(R.id.servicio_remoto_ip_textview);
         muser = getIntent().getStringExtra("user");
         mpass = getIntent().getStringExtra("pass");
-        mport = getIntent().getStringExtra("port");
+        mport = getIntent().getIntExtra("port", 4);
         mip = getIntent().getStringExtra("ip");
     }
 }
