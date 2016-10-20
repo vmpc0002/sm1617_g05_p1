@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         Fragment f = fragmentActivity.findFragmentById(R.id.fragment);
         if (f == null) {
-            AuthFragment authFragment = new AuthFragment();
+            AuthFragment authFragment = new AuthFragment().newInstance("User", "Pass", "127.0.0.1", 0);
             fragmentTransaction.add(R.id.fragment, authFragment);
             fragmentTransaction.addToBackStack(null);
         }
