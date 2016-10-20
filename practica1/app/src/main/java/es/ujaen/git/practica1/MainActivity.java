@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity{
     Button boton_enviar;
     EditText user, pass, port, ip;
     @Override
@@ -25,22 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fragmentTransaction.add(R.id.fragment, authFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
-        boton_enviar=(Button) findViewById(R.id.autenticacion_envia_boton);
-        user=(EditText) findViewById(R.id.autenticacion_user_edittext);
-        pass=(EditText) findViewById(R.id.autenticacion_pass_edittext);
-        port=(EditText) findViewById(R.id.autenticacion_port_edittext);
-        ip=(EditText) findViewById(R.id.autenticacion_ip_edittext);
-        boton_enviar.setOnClickListener(new );
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.autenticacion_envia_boton:
-                Toast.makeText(this, "Enviado",Toast.LENGTH_SHORT).show();
-                break;
-        }
-    }
 }
 
 
