@@ -36,17 +36,15 @@ public class AuthFragment extends Fragment {
         boton_envio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user_output = user.getText().toString();
-                String pass_output = pass.getText().toString();
-                String port_output = port.getText().toString();
-                String ip_output = port.getText().toString();
-                Toast.makeText(fragmento.getContext(), "funciona", Toast.LENGTH_SHORT).show();
-                Intent intent_sercicioremoto = new Intent(fragmento.getContext(), ServicioRemotoActivity.class);
-                intent_sercicioremoto.putExtra("user", user_output);
-                intent_sercicioremoto.putExtra("pass", pass_output);
-                intent_sercicioremoto.putExtra("port", port_output);
-                intent_sercicioremoto.putExtra("ip", ip_output);
-                startActivity(intent_sercicioremoto);
+                Authentication authentication = new Authentication(user.getText().toString(), pass.getText().toString(), ip.getText().toString(), 0);
+
+                Toast.makeText(fragmento.getContext(), authentication.getUser(), Toast.LENGTH_SHORT).show();
+               /* Intent intent_sercicioremoto = new Intent(fragmento.getContext(), ServicioRemotoActivity.class);
+                intent_sercicioremoto.putExtra("user", authentication.getUser());
+                intent_sercicioremoto.putExtra("pass", authentication.getPass());
+                intent_sercicioremoto.putExtra("port", authentication.getPort());
+                intent_sercicioremoto.putExtra("ip", authentication.getIP());
+                startActivity(intent_sercicioremoto);*/
             }
         });
         return fragmento;

@@ -20,9 +20,5 @@ public class ServicioRemotoActivity extends AppCompatActivity {
         mpass = getIntent().getStringExtra("pass");
         mport = getIntent().getStringExtra("port");
         mip = getIntent().getStringExtra("ip");
-        user.setText(muser);
-        pass.setText(mpass);
-        port.setText(mport);
-        ip.setText(mip);
     }
 }
