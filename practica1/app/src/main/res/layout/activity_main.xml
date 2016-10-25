@@ -10,9 +10,8 @@
     tools:context="es.ujaen.git.practica1.MainActivity">
 
     <FrameLayout
+        android:id="@+id/fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fragment"
-        android:layout_centerHorizontal="true">
-    </FrameLayout>
+        android:layout_centerHorizontal="true"></FrameLayout>
 </RelativeLayout>

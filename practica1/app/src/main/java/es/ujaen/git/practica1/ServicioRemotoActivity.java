@@ -1,5 +1,10 @@
 package es.ujaen.git.practica1;
 
+/**
+ * @author Emilio Sánchez Catalán y Víctor Manuel Pérez Cámara
+ * @version 1.0
+ */
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -7,10 +12,16 @@ import android.widget.TextView;
 public class ServicioRemotoActivity extends AppCompatActivity {
     TextView user, pass, port, ip;
 
+    /**
+     * Metodo encargado de la recepción de los valores de autentificación.
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         String muser, mpass, mip;
         int mport;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.servicio_remoto);
         user = (TextView) findViewById(R.id.servicio_remoto_user_textview);

@@ -1,7 +1,8 @@
 package es.ujaen.git.practica1;
 
 /**
- * Created by victo on 29/09/2016.
+ * @author Emilio Sánchez Catalán y Víctor Manuel Pérez Cámara
+ * @version 1.0
  */
 
 public class Authentication {
@@ -10,18 +11,30 @@ public class Authentication {
     protected String mIP;
     protected int mPort;
 
-    public Authentication(String User, String Pass, String IP, int Port){
-        mUser=User;
-        mIP=IP;
-        mPass=Pass;
-        mPort=Port;
+    /**
+     * Constructor
+     *
+     * @param User
+     * @param Pass
+     * @param IP
+     * @param Port
+     */
+    public Authentication(String User, String Pass, String IP, int Port) {
+        mUser = User;
+        mIP = IP;
+        mPass = Pass;
+        mPort = Port;
 
     }
-    public String getUser(){
+
+    //Setters and Getters.
+
+    public String getUser() {
         return mUser;
     }
-    public void setUser(String user){
-        mUser=user;
+
+    public void setUser(String user) {
+        mUser = user;
     }
 
     public String getPass() {

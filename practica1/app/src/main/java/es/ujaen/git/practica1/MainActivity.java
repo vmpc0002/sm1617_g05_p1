@@ -2,19 +2,21 @@ package es.ujaen.git.practica1;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
+/**
+ * @author Emilio Sánchez Catalán y Víctor Manuel Pérez Cámara
+ * @version 1.0
+ */
 public class MainActivity extends AppCompatActivity {
-    Button boton_enviar;
-    EditText user, pass, port, ip;
 
+    /**
+     * Metodo encargado de crear la Activity principal. Donde se vincula la activity al layout principal
+     * y realiza la transacción con el fragmento Authfragment.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

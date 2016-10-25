@@ -1,20 +1,23 @@
 package es.ujaen.git.practica1;
 
+/**
+ * @author Emilio Sánchez Catalán y Víctor Manuel Pérez Cámara.
+ * @version 1.0
+ */
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 
 public class AuthFragment extends Fragment {
 
+    // Definición de variables e inicialización
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static final String ARG_PARAM3 = "param3";
@@ -29,14 +32,23 @@ public class AuthFragment extends Fragment {
     private EditText mEditPass = null;
     private EditText mEditPort = null;
     private EditText mEditIp = null;
+    private Button mButtonEnviar = null;
 
-    private Button boton_envio;
     private Authentication mAutentica = new Authentication("", "", "", 0);
 
     public AuthFragment() {
 
     }
 
+    /**
+     * Metodo que permiter instaciar el fragmento con unos parámetros iniciales.
+     *
+     * @param user nombre de usuario.
+     * @param pass contraseña.
+     * @param ip   dirección ip.
+     * @param port puerto.
+     * @return devuelve el fragment AuthFragment.
+     */
     public static AuthFragment newInstance(String user, String pass, String ip, int port) {
         AuthFragment fragment = new AuthFragment();
         Bundle args = new Bundle();
@@ -48,6 +60,12 @@ public class AuthFragment extends Fragment {
         return fragment;
     }
 
+    /**
+     * Método de creación del fragmento en el que se recuperan los valores
+     * guardados en los argumentos.
+     *
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,11 +86,19 @@ public class AuthFragment extends Fragment {
             }
     }
 
+    /**
+     * Metodo ejecutado la primera vez que se dibuja la interfaz. Se encarga de controlar el envento del boton envía y hacer un
+     * intent a la actividad ServicioRemotoActivity enviando los datos.
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return devuelve la vista del fragmento.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (savedInstanceState != null) {
-            Toast.makeText(getActivity(), "Cambio de configuración", Toast.LENGTH_SHORT).show();
             mAutentica.setUser(savedInstanceState.getString(ARG_PARAM1));
             mAutentica.setPass(savedInstanceState.getString(ARG_PARAM2));
             mAutentica.setIP(savedInstanceState.getString(ARG_PARAM3));
@@ -82,8 +108,8 @@ public class AuthFragment extends Fragment {
 
         reescribir(fragmento);
 
-        boton_envio = (Button) fragmento.findViewById(R.id.autenticacion_envia_boton);
-        boton_envio.setOnClickListener(new View.OnClickListener() {
+        mButtonEnviar = (Button) fragmento.findViewById(R.id.autenticacion_envia_boton);
+        mButtonEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 extraer();
@@ -98,14 +124,23 @@ public class AuthFragment extends Fragment {
         return fragmento;
     }
 
-    private void extraer (){
+    /**
+     * Obtiene los valores de los EditText y los almacena en un objeto de la clase Autenticación.
+     */
+    private void extraer() {
         mAutentica.setUser(mEditUser.getText().toString());
         mAutentica.setPass(mEditPass.getText().toString());
         mAutentica.setIP(mEditPass.getText().toString());
         mAutentica.setPort(Integer.parseInt(mEditPort.getText().toString()));
     }
 
-    private void reescribir (View container) {
+    /**
+     * Método que se encarga de almacenar los datos y volver a pintarlos en la interfaz cada vez
+     * que se produzca un cambio de estado.
+     *
+     * @param container vista contener (en este caso el Fragmento).
+     */
+    private void reescribir(View container) {
 
         mEditUser = (EditText) container.findViewById(R.id.autenticacion_user_edittext);
         mEditPass = (EditText) container.findViewById(R.id.autenticacion_pass_edittext);
@@ -150,6 +185,12 @@ public class AuthFragment extends Fragment {
         mEditPort.setText(Integer.toString(mAutentica.getPort()));
     }
 
+    /**
+     * Método Encargado de guardar los parametros del usuario para conservarlos a pesar de
+     * que produzcan cambios de estado.
+     *
+     * @param outState
+     */
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
